@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import "../Assets/Login.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 function InstructorRegister() {
   const [email,setEmail]=useState('');
   const [name,setName]=useState('');
   const [password,setPassword]=useState('');
   const [Conpassword,setconPassword]=useState('');
   const [isChecked,setIsChecked]=useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const nav=useNavigate();
   const check=()=>{
         setIsChecked(!isChecked);
@@ -14,6 +17,9 @@ function InstructorRegister() {
   const validateEmail = (input) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(input);
+  };
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
   const validate=(e)=>{
     e.preventDefault();
@@ -60,8 +66,15 @@ function InstructorRegister() {
         <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Enter Password" />
       </div>
       <div className="input">
-        <i className="fa-solid fa-lock"></i>
-        <input type="password" value={Conpassword} onChange={(e)=>setconPassword(e.target.value)} placeholder="Confirm Password" />
+      <i className="fa-solid fa-lock"></i>
+      <input type={showPassword ? 'text' : 'password'} value={Conpassword} onChange={(e)=>setconPassword(e.target.value)} placeholder="Confirm Password" />
+      <span className="password-toggle" onClick={togglePasswordVisibility}>
+        {showPassword ? (
+          <FontAwesomeIcon icon={faEyeSlash} />
+        ) : (
+          <FontAwesomeIcon icon={faEye} />
+        )}
+      </span>
       </div>
       <div class="checkbox">
           <input onClick={check} type="checkbox" id="remember"/>

@@ -167,3 +167,15 @@ margin-left: 1%;
  margin-top: -21%;
  margin-left: 13%;
 }
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666; /* Icon color */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+.password-toggle:hover {
+  color: #333; /* Change the color on hover */
+}

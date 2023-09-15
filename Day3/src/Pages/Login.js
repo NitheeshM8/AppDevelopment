@@ -1,14 +1,21 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import "../Assets/Login.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 function Login() {
   const [email,setUsername]=useState('');
   const [password,setPassword]=useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const nav=useNavigate();
   const validateEmail = (input) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(input);
   };
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
     const validate=(e)=>{
       e.preventDefault();
       if(email.length===0||password.length===0){
@@ -39,7 +46,14 @@ function Login() {
         </div>
         <div className="input">
           <i className="fa-solid fa-lock"></i>
-          <input type="password" onChange={(e)=>setPassword(e.target.value)} placeholder="Enter Password" />
+          <input type={showPassword ? 'text' : 'password'} onChange={(e)=>setPassword(e.target.value)} placeholder="Enter Password" />
+          <span className="password-toggle" onClick={togglePasswordVisibility}>
+          {showPassword ? (
+            <FontAwesomeIcon icon={faEyeSlash} />
+          ) : (
+            <FontAwesomeIcon icon={faEye} />
+          )}
+        </span>
           </div>
           <div class="checkbox">
             <input type="checkbox" id="remember"/>
