@@ -1,0 +1,136 @@
+.nav {
+  background-color:rgba(255, 127, 80,0.96);
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+}
+
+.nav .logo-name {
+  font-size: xx-small;
+  padding-bottom: 1px;
+}
+
+.logo1 {
+  display: flex;
+  border-radius: 50%;
+  height: 50px;
+  width: 60px;
+  border: 1px solid black;
+}
+
+.logo {
+  color:coral;
+  margin-left: 10px;
+}
+.login:hover{
+  color:#ffffff;
+}
+.login{
+  text-transform: uppercase;
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 20px;
+}
+.nav-content {
+  display: flex;
+  align-items: center;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  margin-left: 100px;
+  padding: 0;
+}
+.me1
+{
+height: 2%;
+width: 150px;
+background-color:cornsilk;
+border: 2px solid #2b272e;
+color:black;
+text-align: center;
+}
+.me
+{
+text-decoration: none;
+} 
+.nav .search{
+  border-radius: 5px;
+  border: 10%;
+  width: 200px;
+}
+
+.user-icon-image {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 280px;
+  top: 10px;
+}
+
+.notification-icon {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 190px;
+  top: 8px;
+}
+
+.user-name {
+  margin-left: 10px;
+  margin-top: 18px;
+  text-transform: uppercase;
+  position: absolute;
+  right: 100px;
+  top: 5px;
+}
+
+.toggle {
+  margin-bottom: 13px;
+  margin-left: 10px;
+}
+
+.li-search {
+  margin-bottom: 15px;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav ul li {
+  margin-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .nav ul {
+    margin-left: 10px; 
+  }
+
+  .user-icon-image,
+  .notification-icon,
+  .user-name {
+    position: static; 
+    margin: 5px 10px; 
+  }
+}
+.logh
+{
+  display: flex;
+  position: absolute;
+  right: 100px;
+  text-decoration: none ;
+  margin-top: 0.1%;
+}
