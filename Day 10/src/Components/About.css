@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
 body {
@@ -12,3 +13,19 @@ body {
 .about h1{
   color: green;
 }
+=======
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  background-color: rgb(255, 248, 220,0.7);
+}
+.about{
+    margin-top:6%;
+    width:auto;
+    padding:50px;
+}
+.about h1{
+  color: green;
+}
+>>>>>>> a1900e588f2252b25795fec4df5f5a0ab51fc5d3
