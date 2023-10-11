@@ -7,7 +7,6 @@ import { getCourseData } from './CourseData';
 import { PieChart, Pie, Cell, ResponsiveContainer, Sector, Tooltip as RechartsTooltip } from 'recharts';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-
 function InstructorDashboard() {
   const username = useSelector((state) => state.user.user);
   const userType = useSelector((state) => state.user.userType);

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import './Sidebar.css';
-import { Link, useNavigate } from 'react-router-dom';
 import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import SubjectIcon from '@mui/icons-material/Subject';
@@ -15,18 +14,17 @@ import { selectSidebarState } from '../redux/sidebarSlice';
 import CloseIcon from '@mui/icons-material/Close';
 import { logout } from '../redux/userSlice';
 import { getEmail, getRole } from './LocalStorage';
+import { Link, useNavigate } from 'react-router-dom';
 
 function SideBar() {
   const username = getEmail();
   const userType = getRole();
-
-  const nav = useNavigate();
   const [activeMenuItem, setActiveMenuItem] = useState('Dashboard');
   const handleMenuItemClick = (menuItemId, route) => {
     setActiveMenuItem(menuItemId);
     nav(route);
   };
-
+const nav=useNavigate()
   const dispatch = useDispatch();
   const handleLogout = () => {
     if (window.confirm("Are You sure to logout?")) {

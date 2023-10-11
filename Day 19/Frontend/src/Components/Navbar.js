@@ -78,12 +78,12 @@ const Navbar = () => {
           <img className="user-icon" src="https://cdn-icons-png.flaticon.com/512/219/219983.png" alt="User Icon"/>
         </li>
         <li className="li-elements">
-          <h5 className="li-elements">{Email}</h5>
+          <h5 className="li-elementsv">{Email}</h5>
         </li>
       </>
     ) : (
         <Link to="/login" className="login-link">
-          <h3 id="login">Login</h3>
+          <h3 className="login">Login</h3>
         </Link>
     )}
   </ul>

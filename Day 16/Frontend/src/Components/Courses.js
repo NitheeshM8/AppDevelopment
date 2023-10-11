@@ -4,7 +4,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { getCourseData, setCourseData } from './CourseData'; 
 import { useSelector } from 'react-redux';
 import axios from 'axios';
-
+import { Link, useNavigate } from 'react-router-dom';
 function Courses() {
   const [isOpen, setIsOpen] = useState(false);
   const [courseData, setCourseDataState] = useState([]);
@@ -21,7 +21,10 @@ const token=localStorage.getItem("jwtToken")
   useEffect(() => {
     setCourseData(courseData);
   }, [courseData]);
-
+  const nav=useNavigate();
+  if(token===null){
+    nav("/login")
+  }
   const togglePopup = (course = null) => {
     if (course) {
       setEditingCourse(course);

@@ -10,6 +10,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Attendance() {
@@ -22,6 +23,7 @@ function Attendance() {
     { name: 'Present', value: 0 },
     { name: 'Absent', value: 0 },
   ]);
+  
 
   useEffect(() => {
     axios.get("http://localhost:8080/students").then((response) => {

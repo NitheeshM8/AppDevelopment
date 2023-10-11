@@ -13,6 +13,7 @@ function Students() {
   const nav=useNavigate();
   const token=getToken();
   const [isOpen, setIsOpen] = useState(false);
+  
   const [editMode, setEditMode] = useState(false);
   const password="defaultpassword"
   const [newStudent, setNewStudent] = useState({
@@ -63,7 +64,7 @@ function Students() {
       feesPaid:'',
     });
   };
-
+ 
   const handleFieldChange = (field, value) => {
     setFormErrors({ ...formErrors, [field]: '' });
     setNewStudent({ ...newStudent, [field]: value });
@@ -220,6 +221,9 @@ function Students() {
   };
 const role=localStorage.getItem("role")
   useEffect(() => {
+    if(token===null){
+      nav("/login")
+    }
     axios.get("http://localhost:8080/students",{
       headers:{
       Authorization: `Bearer ${token}`,

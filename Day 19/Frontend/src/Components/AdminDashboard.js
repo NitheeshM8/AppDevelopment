@@ -16,10 +16,15 @@ import {
   Tooltip as LineChartTooltip,
   Legend as LineChartLegend,
 } from 'recharts';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function AdminDashboard() {
+  const token=localStorage.getItem("jwtToken")
+  const nav=useNavigate();
+  if(token===null){
+    nav("/login")
+  }
   const pieChartData = [
     { name: 'A', value: 10 },
     { name: 'B', value: 15 },

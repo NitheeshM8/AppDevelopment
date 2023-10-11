@@ -35,7 +35,7 @@
   color:coral;
   margin-left: 10px;
 }
-#login{
+.login{
   text-transform: uppercase;
   color: black;
   font-weight: 700;
@@ -80,7 +80,7 @@ text-decoration: none;
   width: 30px;
   height: 30px;
   position: absolute;
-  right: 190px;
+  right: 160px;
   top: 8px;
 }
 
@@ -128,9 +128,9 @@ hello
     padding-bottom: 15px;
   }
   .login{
-    margin-left:920px ;
+
     margin-right: 0;
-    margin-top: 15px;
+    margin-top: 0px;
     text-transform: uppercase;
     color: black;
     font-weight: 700;
@@ -144,7 +144,7 @@ hello
 }
 
 .li-elements {
-  margin-right: 20px; 
+  margin-right: 50px; 
   list-style: none; 
   display: flex;
   align-items: center; 
@@ -153,7 +153,7 @@ hello
   width: 30px; 
   height: 30px; 
   margin-top: 0.8%;
-  margin-right: 19%;
+  margin-right:450px;
 }
 
 .login-link {
@@ -197,7 +197,7 @@ hello
   .liele{
     color: black;
     text-decoration: none;
-    margin-right: 10%;
+    margin-right: 5%;
   }
   .user-icon-image {
     width: 40px;
